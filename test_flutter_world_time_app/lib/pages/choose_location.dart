@@ -8,10 +8,26 @@ class ChooseLocation extends StatefulWidget {
 class _ChooseLocationState extends State<ChooseLocation> {
   int counter = 0;
 
+  void getData() async {
+    //  simulate network request username
+    String username = await Future.delayed(Duration(seconds: 3), () {
+      return 'username';
+    });
+
+    //  simulate network request data of username
+    String userData = await Future.delayed(Duration(seconds: 2), () {
+      return 'data of username';
+    });
+
+    print('$username - $userData');
+  }
+
   @override
   void initState() {
     super.initState();
     print('initState function run');
+    getData();
+    print('hey');
   }
 
   @override
